@@ -15,4 +15,12 @@ class League
      * @var string
      */
     public $name;
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return "#{$this->id} {$this->name}";
+    }
 }

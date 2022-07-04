@@ -55,6 +55,9 @@ class Event
      */
     public $xg;
 
+    /**
+     * @return int
+     */
     public function getHalfNumber(): int
     {
         if ($this->minute > 45) {

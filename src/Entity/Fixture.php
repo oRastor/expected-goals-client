@@ -76,4 +76,12 @@ class Fixture
     {
         return $this->status == self::STATUS_FINISHED;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return "#{$this->id} {$this->homeTeam->name} - {$this->awayTeam->name}";
+    }
 }
