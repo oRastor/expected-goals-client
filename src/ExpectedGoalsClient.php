@@ -54,9 +54,9 @@ class ExpectedGoalsClient
      * @return League[]
      * @throws Exception
      */
-    public function getLeagues($countryId): array
+    public function getTournaments($countryId): array
     {
-        $response = $this->makeRequest("/countries/{$countryId}/leagues/");
+        $response = $this->makeRequest("/countries/{$countryId}/tournaments/");
 
         return $this->mapper->mapArray($response->result, [], League::class);
     }
@@ -68,7 +68,7 @@ class ExpectedGoalsClient
      */
     public function getSeasons($leagueId): array
     {
-        $response = $this->makeRequest("/leagues/{$leagueId}/seasons/");
+        $response = $this->makeRequest("/tournaments/{$leagueId}/seasons/");
 
         return $this->mapper->mapArray($response->result, [], Season::class);
     }

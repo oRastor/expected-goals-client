@@ -20,8 +20,8 @@ use ExpectedGoalsClient\ExpectedGoalsClient;
 $client = new ExpectedGoalsClient('Your API Key');
 
 $countries = $client->getCountries(); // list of countries
-$leagues = $client->getLeagues($countryId); // list of leagues for specified country
-$seasons = $client->getSeasons($leagueId); // list of seasons for specified league
+$leagues = $client->getTournaments($countryId); // list of tournaments for specified country
+$seasons = $client->getSeasons($leagueId); // list of seasons for specified tournament
 $fixtures = $client->getFixtures($seasonId); // list of fixtures for specified season
 $fixture = $client->getFixture($fixtureId); // get one fixture
 ```
@@ -29,7 +29,7 @@ $fixture = $client->getFixture($fixtureId); // get one fixture
 Calculating xg90 (expected goals for 90 minutes) metric for every team of available seasons 
 ```php
 foreach ($client->getCountries() as $country) {
-    foreach ($client->getLeagues($country->id) as $league) {
+    foreach ($client->getTournaments($country->id) as $league) {
         foreach ($client->getSeasons($league->id) as $season) {
             echo "{$country->name}. {$league->name} ({$season->name})\n";
             echo "=====\n";
