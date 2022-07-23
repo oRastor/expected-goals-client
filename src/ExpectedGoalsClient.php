@@ -104,7 +104,7 @@ class ExpectedGoalsClient
         $result = json_decode($result->getBody()->getContents());
 
         if (isset($result->error)) {
-            throw new Exception($result->error->text, $result->error->code);
+            throw new Exception($result->error->text);
         }
 
         return $result;
