@@ -72,6 +72,11 @@ class Fixture
      */
     public $events;
 
+    /**
+     * @var Score
+     */
+    public $xg;
+
     public function isFinished(): bool
     {
         return $this->status == self::STATUS_FINISHED;
