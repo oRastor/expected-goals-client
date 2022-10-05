@@ -73,7 +73,7 @@ class Fixture
     public $events;
 
     /**
-     * @var Score
+     * @var ExpectedScore
      */
     public $xg;
 

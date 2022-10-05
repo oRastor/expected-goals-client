@@ -2,15 +2,15 @@
 
 namespace ExpectedGoalsClient\Entity;
 
-class Score
+class ExpectedScore
 {
     /**
-     * @var int|null
+     * @var float|null
      */
     public $home;
 
     /**
-     * @var int|null
+     * @var float|null
      */
     public $away;
 }
