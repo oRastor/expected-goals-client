@@ -46,7 +46,7 @@ class Event
     public $teamId;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $type;
 
