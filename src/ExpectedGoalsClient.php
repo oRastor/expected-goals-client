@@ -82,6 +82,10 @@ class ExpectedGoalsClient
     {
         $response = $this->makeRequest("/seasons/{$seasonId}/fixtures/");
 
+        if (!isset($response->result)) {
+            return [];
+        }
+
         return $this->mapper->mapArray($response->result, [], Fixture::class);
     }
 
